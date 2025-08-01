@@ -45,7 +45,7 @@ public class InwordService {
 	 	
 				if(!remainingProductsList.isEmpty()) {
 					
-					RemainingProducts newRemainingProducts = remainingProductsList.getFirst();
+					RemainingProducts newRemainingProducts = remainingProductsList.get(0);
 					newRemainingProducts.setProductName(data.getStockName());
 					newRemainingProducts.setProductQuantity(newRemainingProducts.getProductQuantity() +data.getStockQuantity());
 
@@ -87,7 +87,7 @@ public class InwordService {
 
 	    if (inwordData == null || remainingProductsList.isEmpty()) return null;
 
-	    RemainingProducts newRemainingProducts = remainingProductsList.getFirst();
+	    RemainingProducts newRemainingProducts = remainingProductsList.get(0);
 
 	    // Store the original stock quantity before updating
 	    int originalStockQuantity = inwordData.getStockQuantity();

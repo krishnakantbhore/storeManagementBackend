@@ -57,7 +57,7 @@ public class OutwordService {
 			return null;
 		}
 		else {
-			RemainingProducts newRemainingProducts = remaingProductList.getFirst();
+			RemainingProducts newRemainingProducts = remaingProductList.get(0);
 			if(newRemainingProducts.getProductQuantity()>=data.getProductQuantity()) {
 				
 				Outword outword=outwordDao.save(data);	
@@ -201,7 +201,7 @@ public class OutwordService {
 
 		    if (inwordData == null || remainingProductsList.isEmpty()) return null;
 
-		    RemainingProducts newRemainingProducts = remainingProductsList.getFirst();
+		    RemainingProducts newRemainingProducts = remainingProductsList.get(0);
 
 		    // Store the original stock quantity before updating
 		    int originalStockQuantity = inwordData.getProductQuantity();

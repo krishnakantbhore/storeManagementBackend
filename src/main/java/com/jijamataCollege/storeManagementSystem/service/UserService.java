@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.jijamataCollege.storeManagementSystem.Entity.User;
 import com.jijamataCollege.storeManagementSystem.dao.UserRepo;
@@ -29,6 +31,16 @@ public class UserService {
 		 return userRepo.save(user);
 		 
 	}
+	public User findAllUsersById(int id) {
+		// TODO Auto-generated method stub
+		return userRepo.findById(id).orElse(null);
+	}
 	
+    
+	 
+	public void deleteData(int id) {
+		userRepo.deleteById(id);
+		
+	}
 
 }
